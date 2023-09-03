@@ -5,27 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.view.view.distance
-import kotlinx.android.synthetic.main.view.view.galaxy
-import kotlinx.android.synthetic.main.view.view.gravity
-import kotlinx.android.synthetic.main.view.view.planet_img
-import kotlinx.android.synthetic.main.view.view.title
+import com.example.planeto.databinding.ItemViewBinding
 
-class Adapter(var planet: List<PlanetData>): RecyclerView.Adapter<Adapter.myViewHolder>() {
+class Adapter(var planet: List<PlanetData>) : RecyclerView.Adapter<Adapter.myViewHolder>() {
 
-    class myViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    var title = view.title
-    var planetimg = view.planet_img
-    var galaxy = view.galaxy
-    var distance = view.distance
-    var gravity = view.gravity
-
-
+    class myViewHolder(binding: ItemViewBinding) : RecyclerView.ViewHolder(binding.root) {
+        var title = binding.title
+        var planetimg = binding.planetImg
+        var galaxy = binding.galaxy
+        var distance = binding.distance
+        var gravity = binding.gravity
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): myViewHolder {
-var itemView = LayoutInflater.from(parent.context).inflate(R.layout.view,parent,false)
-        return myViewHolder(itemView)
+        val layoutInflater = LayoutInflater.from(parent.context)
+        val binding = ItemViewBinding.inflate(layoutInflater, parent, false)
+        return myViewHolder(binding)
     }
 
     override fun getItemCount(): Int {
@@ -33,58 +28,65 @@ var itemView = LayoutInflater.from(parent.context).inflate(R.layout.view,parent,
     }
 
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
-        var dummyImage:Int?=null
-        holder.itemView.setOnClickListener{
-            val intent = Intent(holder.itemView.context,PlanetDetails::class.java)
-            intent.putExtra("planet",planet[position])
+        var dummyImage: Int? = null
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, PlanetDetails::class.java)
+            intent.putExtra("planet", planet[position])
             intent.putExtra("planetImage", dummyImage)
             holder.itemView.context.startActivity(intent)
 
         }
         holder.title.text = planet[position].title
-        holder.distance.text = planet[position].distance+" m km"
+        holder.distance.text = planet[position].distance + " m km"
         holder.galaxy.text = planet[position].galaxy
-        holder.gravity.text = planet[position].gravity+" m/ss"
+        holder.gravity.text = planet[position].gravity + " m/ss"
 
-        when(planet[position].title!!.toLowerCase()){
+        when (planet[position].title!!.toLowerCase()) {
 
 
-            "mars"->{
+            "mars" -> {
                 dummyImage = R.drawable.mars
             }
-            "neptune"-> {
+
+            "neptune" -> {
                 dummyImage = R.drawable.neptune
             }
-            "earth"->{
+
+            "earth" -> {
                 dummyImage = R.drawable.earth
             }
-            "moon"-> {
+
+            "moon" -> {
                 dummyImage = R.drawable.moon
             }
-            "venus"->{
+
+            "venus" -> {
                 dummyImage = R.drawable.venus
             }
-            "jupiter"-> {
+
+            "jupiter" -> {
                 dummyImage = R.drawable.ic_jupiter
             }
-            "saturn"-> {
+
+            "saturn" -> {
                 dummyImage = R.drawable.saturn
             }
-            "uranus"->{
+
+            "uranus" -> {
                 dummyImage = R.drawable.uranus
             }
-            "mercury"-> {
+
+            "mercury" -> {
                 dummyImage = R.drawable.mercury
             }
-            "sun"-> {
+
+            "sun" -> {
                 dummyImage = R.drawable.sun
             }
 
 
         }
         holder.planetimg.setImageResource(dummyImage!!)
-
-
     }
 }
 
