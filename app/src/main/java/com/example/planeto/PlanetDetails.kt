@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.planeto.databinding.ActivityPlanetDetailsBinding
 
-class PlanetDetails : AppCompatActivity() {
+class PlanetDetails : AppCompatActivity() {   
     private lateinit var binding: ActivityPlanetDetailsBinding
     private lateinit var obj: PlanetData
     private var planetImg: Int? = null
