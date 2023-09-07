@@ -4,8 +4,9 @@
 
 ![image](https://github.com/turkan-risvan/PlanetApp/assets/78659151/d37f2652-b994-403f-bd75-d3ea4ec37a76)
 
-![image](https://github.com/turkan-risvan/PlanetApp/assets/78659151/4e6dc8e8-2ea9-4572-baf5-0002f70959de)
+![image](https://github.com/turkan-risvan/PlanetApp/assets/78659151/182f83ca-ae6e-4f23-a44e-745a3d472bc4)
 
-![image](https://github.com/turkan-risvan/PlanetApp/assets/78659151/89acebc7-1a28-4721-b784-e8eb8f44fbfc)
+![image](https://github.com/turkan-risvan/PlanetApp/assets/78659151/7325adbb-85bb-4616-97ce-7b1f987fd51f)
+
 
 
